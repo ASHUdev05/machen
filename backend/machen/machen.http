@@ -1,0 +1,6 @@
+@machen_HostAddress = http://localhost:5188
+
+GET {{machen_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
