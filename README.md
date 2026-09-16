@@ -29,9 +29,9 @@ machen — a fullstack todo app built with .NET, React, TypeScript, Vite, Postgr
 
 ## 🛠️ Tech Stack
 
-![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![.NET](https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white) ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=white) ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white) ![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white) ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
-**Notable libraries:** Redux
+**Notable libraries:** Redux, Axios, Bootstrap
 
 ## 🏗️ Architecture
 
@@ -40,22 +40,33 @@ A high-level view of how the main pieces fit together:
 ```mermaid
 flowchart TD
     User["👤 User / Browser"]
-    FE["🖼️ React Frontend"]
-    User --> FE
+    FE["⚛️ React Frontend"]
+    BE["⚙️ .NET 10 Web API Backend"]
+    DB["⛁ PostgreSQL database"]
+    User --> FE --> BE --> DB
 ```
 
 ## ⚡ Quick Start
 
 ```bash
+----------------------------------------------------------------------------------
+# Prerequisites: PostgreSQL must be up and running, this project assumes it is running at port 5432. (edit appsettings.json inside backend/ accordingly)
+----------------------------------------------------------------------------------
 
 # 1. Clone the repository
 git clone https://github.com/ASHUdev05/machen.git
 
-# 2. Install dependencies
+# 2. Go to frontend/ and Install dependencies
 npm install
 
 # 3. Start the dev server
 npm run dev
+
+# 4. Go to backend/ and Install dependencies and create migrations
+dotnet restore && dotnet ef database update
+
+# 5. Start the backend server
+dotnet run
 ```
 
 ## 📦 Key Dependencies
