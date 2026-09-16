@@ -50,7 +50,9 @@ flowchart TD
 
 ```bash
 ----------------------------------------------------------------------------------
-# Prerequisites: PostgreSQL must be up and running, this project assumes it is running at port 5432. (edit appsettings.json inside backend/ accordingly)
+# Prerequisites: PostgreSQL must be up and running, 
+this project assumes it is running at port 5432. 
+(edit appsettings.json inside backend/ accordingly)
 ----------------------------------------------------------------------------------
 
 # 1. Clone the repository
